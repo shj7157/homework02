@@ -115,28 +115,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 게시물 수
-    const db = JSON.parse(localStorage.getItem("postDataDB")) || {};
-    const feedCnt = Object
-        .keys(db)
-        .length;
-
-
-    document.getElementById("feedCnt").textContent = feedCnt;
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    //로컬 스토리지에 등록된 게시물 그리드에 추가
     const grid = document.getElementById("postGrid");
     const posts = JSON.parse(localStorage.getItem("posts") || "[]");
-
+    
     posts.forEach(post => {
         const div = document.createElement("div");
         div.className = "post";
-
+        
         const img = document.createElement("img");
         img.src = post.img;
-
+        
         div.appendChild(img);
         grid.appendChild(div);
     });
+    //게시물 수
+    document.getElementById("feedCnt").textContent = grid.children.length;
 });
