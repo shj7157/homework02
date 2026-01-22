@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Instagram Feed</title>
+        <link rel="stylesheet" href="../index/index.css">
+        <link rel="stylesheet" href="../mypage/mypage.css"/>
+        <script defer="defer" src="../mypage/mypage.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <img src="/source/logo.jpg" alt="로고">
+            </div>
+
+            <div class="nav-item">
+                <img src="/source/home.jpg">
+                <span class="nav-text">홈</span>
+            </div>
+
+            <div class="nav-item">
+                <img src="/source/search.jpg">
+                <span class="nav-text">검색</span>
+            </div>
+
+            <div class="nav-item">
+                <img src="/source/message.jpg">
+                <span class="nav-text">메시지</span>
+            </div>
+        </nav>
+        <main>
+            <div class="profile-container">
+
+                <!-- 프로필 사진 -->
+                <div class="profile-photo">
+                    <a href="https://www.instagram.com/sxo._.hj/">
+                        <img src="/source/6.jpg" alt="프로필 사진">
+                    </a>
+                </div>
+
+                <!-- 오른쪽 프로필 내용 -->
+                <div class="profile-info">
+
+                    <div class="top-row">
+                        <h2 class="username">my_profile</h2>
+                        <button class="edit-btn">프로필 편집</button>
+                    </div>
+
+                    <ul class="stats">
+                        <li>
+                            <strong id="feedCnt"></strong>
+                            게시물</li>
+                        <li>
+                            <strong>3528</strong>
+                            팔로워</li>
+                        <li>
+                            <strong>182</strong>
+                            팔로잉</li>
+                    </ul>
+
+                    <div class="name-and-bio">
+                        <strong class="realname">서현진</strong>
+                        <p class="bio">나를 표현하는 문장 한 줄<br>취미는 코딩 & 음악 듣기 🎧</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 게시물 사진 섹션 -->
+            <div class="post-grid">
+                <div class="post"><img src="/source/7.jpg"></div>
+                <div class="post"><img src="/source/8.jpg"></div>
+                <div class="post"><img src="/source/9.jpg"></div>
+                <div class="post"><img src="/source/3.jpg"></div>
+                <div class="post"><img src="/source/4.jpg"></div>
+                <div class="post"><img src="/source/5.jpg"></div>
+            </div>
+
+            <!-- 게시물 클릭 시 뜨는 모달 -->
+            <div id="postModal" class="modal">
+                <div class="modal-box">
+
+                    <!-- 큰 이미지 -->
+                    <img class="modal-img" id="modalImg">
+
+                    <!-- 우측 정보 영역 -->
+                    <div class="modal-right">
+
+                        <!-- 닫기 버튼 -->
+                        <span class="close">&times;</span>
+
+                        <!-- 좋아요 섹션 -->
+                        <div class="like-section">
+                            <button id="likeBtn" class="like-btn">♡</button>
+                            <span id="likeCount">0</span>
+                            Likes
+                        </div>
+
+                        <!-- 댓글 리스트 -->
+                        <div id="commentList" class="comment-list"></div>
+
+                        <!-- 댓글 입력 -->
+                        <div class="comment-input">
+                            <input type="text" id="commentText" placeholder="댓글 달기..."/>
+                            <button id="addCommentBtn">게시</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
